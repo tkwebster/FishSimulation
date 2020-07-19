@@ -30,7 +30,6 @@ func _ready():
 	var j = 0
 	while j < num_types:
 		type_color.push_back(get_color_set())
-		print(type_color[j])
 		j += 1
 	j = 0
 	

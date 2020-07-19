@@ -16,7 +16,7 @@ export var avoid_ovelap_strength = 100.0
 export var avoid_borders_strength = 10.0
 export var avoid_other_fish_strength = 25.0
 export var alignment_strength = 20.0
-export var cohesion_strength = 1.0
+export var cohesion_strength = 5.0
 export var borders = true
 
 # Called when the node enters the scene tree for the first time.
