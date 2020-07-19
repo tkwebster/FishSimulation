@@ -97,6 +97,19 @@ func avoid_overlap_logic():
 
 	return avoid_vector
 
+func avoid_collisions_logic():
+	var avoid_vector = Vector2()
+	var count = 0
+	
+	for fish in school:
+		if fish != self:
+			if self.position.distance_to(fish.position) <= self.comfort_radius * 1.5:
+				var fish_angle = rad2deg((self.position - fish.position).normalized().angle())
+				if abs(self.rotation-fish_angle) < (view_angle/2.0):
+					avoid_vector += (self.position - fish.position)
+	
+	return avoid_vector
+
 func alignment_logic(neighbors):
 	var alignment_vector = Vector2()
 	if neighbors.empty():
@@ -131,6 +144,7 @@ func _process(delta):
 	accelleration += alignment_logic(neighbors)
 	accelleration += cohesion_logic(neighbors)
 	accelleration += avoid_other_fish_logic()
+	accelleration += avoid_collisions_logic()
 
 	if borders:
 		accelleration += avoid_borders()

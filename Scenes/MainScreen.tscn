@@ -38,6 +38,7 @@ __meta__ = {
 }
 
 [node name="Options_Background" type="ColorRect" parent="."]
+visible = false
 margin_top = 20.0
 margin_right = 300.0
 margin_bottom = 200.0
@@ -47,6 +48,7 @@ __meta__ = {
 }
 
 [node name="Options" type="HBoxContainer" parent="."]
+visible = false
 margin_top = 20.0
 margin_right = 300.0
 margin_bottom = 196.0
@@ -143,6 +145,7 @@ margin_right = 148.0
 margin_bottom = 16.0
 min_value = 10.0
 max_value = 200.0
+step = 5.0
 value = 120.0
 
 [node name="Num_Types" type="HSlider" parent="Options/Sliders"]
@@ -161,6 +164,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = 50.0
 max_value = 1000.0
+step = 25.0
 value = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,7 +176,10 @@ margin_right = 148.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+min_value = 40.0
 max_value = 640.0
+step = 10.0
+value = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
