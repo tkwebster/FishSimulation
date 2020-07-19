@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Shaders/fish_movement.shader" type="Shader" id=1]
+[ext_resource path="res://Sprites/new_fish.png" type="Texture" id=2]
+[ext_resource path="res://Script/Fish.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/time_offset = 0.0
+shader_param/time_scale = 3.0
+shader_param/side_to_side = 2.0
+shader_param/pivot = 1.0
+shader_param/wave = 5.0
+shader_param/black_mask = 1.0
+shader_param/white_mask = 0.0
+
+[sub_resource type="ArrayMesh" id=2]
+surfaces/0 = {
+"aabb": AABB( -11, -21, 0, 22, 42, 0 ),
+"array_data": PoolByteArray( 0, 0, 0, 65, 205, 204, 164, 193, 70, 23, 93, 63, 193, 9, 28, 60, 0, 0, 0, 65, 205, 204, 140, 193, 70, 23, 93, 63, 93, 202, 165, 61, 0, 0, 48, 65, 102, 102, 86, 193, 0, 0, 128, 63, 149, 75, 57, 62, 0, 0, 48, 65, 96, 102, 230, 63, 0, 0, 128, 63, 175, 248, 10, 63, 152, 153, 185, 64, 0, 0, 168, 65, 172, 125, 67, 63, 0, 0, 128, 63, 0, 0, 192, 192, 0, 0, 168, 65, 47, 186, 104, 62, 0, 0, 128, 63, 0, 0, 192, 192, 0, 0, 128, 65, 47, 186, 104, 62, 24, 134, 97, 63, 0, 0, 24, 193, 0, 0, 128, 63, 233, 162, 139, 61, 98, 24, 6, 63, 205, 204, 44, 193, 0, 0, 128, 63, 9, 242, 20, 60, 98, 24, 6, 63, 0, 0, 48, 193, 51, 51, 67, 193, 0, 0, 0, 0, 105, 141, 86, 62, 0, 0, 192, 192, 0, 0, 164, 193, 47, 186, 104, 62, 49, 12, 67, 60, 0, 0, 192, 64, 0, 0, 168, 193, 116, 209, 69, 63, 0, 0, 0, 0 ),
+"array_index_data": PoolByteArray( 11, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0, 3, 0, 4, 0, 5, 0, 7, 0, 8, 0, 9, 0, 9, 0, 10, 0, 11, 0, 11, 0, 1, 0, 3, 0, 3, 0, 5, 0, 6, 0, 6, 0, 7, 0, 9, 0, 9, 0, 11, 0, 3, 0, 3, 0, 6, 0, 9, 0 ),
+"blend_shape_data": [  ],
+"format": 262417,
+"index_count": 30,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 12
+}
+
+[node name="Fish" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Body1" type="MeshInstance2D" parent="."]
+material = SubResource( 1 )
+rotation = 1.5708
+mesh = SubResource( 2 )
+texture = ExtResource( 2 )
